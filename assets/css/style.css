@@ -1,18 +1,83 @@
-.element{
-	border-color: yellow;
-	border-style: solid;
-	border-width: 1px;
-}
-
 html{
 	height: 100%;
 }
 
 body{
 	display: flex;
+	flex-direction: column;
 	min-height: 100%;
+}
+
+h1 { 
+	font-size: 2em; 
+}
+h2 { 
+	font-size: 1.5em; 
+}
+h3 { 
+	font-size: 1.17em; 
+}
+h4 { 
+	font-size: 1.12em; 
+}
+h5 { 
+	font-size: .83em; 
+}
+h6 { 
+	font-size: .75em; 
+}
+
+.mainSection{
+	flex: 1;
+	display: flex;
+}
+
+.element{
+	border-color: yellow;
+	border-style: solid;
+	border-width: 1px;
+}
+
+/*Invisibility class*/
+.invisible{
+	display: none;
+}
+#leftPane, #rightPane{
+	flex: 1.25;
+}
+
+#centerPane{
+	flex: 2;
+	display: flex;
 	flex-direction: column;
 }
-.mainsection{
+
+#warriorHeading{
+	flex:.5;
+}
+
+#gameIntro{
+	flex: .5
+}
+
+#gameDirections{
+	flex: 2;
+}
+
+#warriorFlex{
+	flex: 1.5;
+	display: flex;
+}
+
+#warriorOne{
+	flex: 1;
+}
+#warriorTwo{
+	flex: 1;
+}
+#warriorThree{
+	flex: 1;
+}
+#warriorFour{
 	flex: 1;
 }
