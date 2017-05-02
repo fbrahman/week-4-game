@@ -6,9 +6,10 @@ var game = {
 	computerCharacter: "",
 	characterArray:[],
 
-	playerChoice: function(){
-
-	},
+	playerChoice: function(x){
+		$(x).find("img.warriorImg").detach().appendTo("#playerChoiceImage");
+		console.log(x);
+	},	
 
 	computerChoice: function(){
 
@@ -76,6 +77,8 @@ var character2 = new characters("Krillin", 100, 8, 800);
 var character3 = new characters("Android 18", 110, 9, 900);
 var character4 = new characters("Vegeta", 180, 15, 1500);
 
-$("#warriorOne").click(function(){
-	$("#warriorOnePic").detach().appendTo("#computerChoiceImage");
+$(".warriorSelection").click(function(){
+	game.playerChoice(this);
+	// console.log(this);
+	// $(this).find(".warriorImg").detach().appendTo("#playerChoiceImage");
 });
