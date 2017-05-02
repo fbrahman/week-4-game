@@ -103,20 +103,45 @@ h6 {
 }
 
 #warriorOnePic, #warriorTwoPic, #warriorThreePic, #warriorFourPic{
-	width: 5em;
-	flex: .5;
+/*	width: 5em;
+	flex: .5;*/
 }
 
-.warriorName{
-	flex: 2;
-	font-size: 2em;
+div .warriorPic{
+	flex: 1;
+}
+
+div .warriorName{
+	flex: 3;
 }
 
 #name{
-	transform: rotate(-90deg);
-	text-align: center;
-	width: 100%;
-	height: auto;
-	object-fit: contain;
+	/*transform-origin: 0 0 0; */
+	display: flex;
+	align-items: flex-end;
+	vertical-align: bottom;
+	transform: rotate(90deg);
+	white-space: nowrap;
+	font-size: 2em;
 
+/*    -webkit-transform: rotate(90deg);
+    -webkit-transform-origin: left top;
+    -moz-transform: rotate(90deg);
+    -moz-transform-origin: left top;
+    -ms-transform: rotate(90deg);
+    -ms-transform-origin: left top;
+    -o-transform: rotate(90deg);
+    -o-transform-origin: left top;
+    transform: rotate(90deg);
+    transform-origin: left top;
+
+    position: absolute;
+    top: 0;
+    left: 100%;
+    white-space: nowrap;    
+*/
+}
+
+.choiceArea{
+	display: flex;
 }
