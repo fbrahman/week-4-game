@@ -120,6 +120,7 @@ div .warriorName{
 	display: flex;
 	align-items: flex-end;
 	vertical-align: bottom;
+	transform-origin: -.5em 3em 0;
 	transform: rotate(90deg);
 	white-space: nowrap;
 	font-size: 2em;
