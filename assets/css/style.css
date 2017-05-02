@@ -2,7 +2,8 @@ html{
 	height: 100%;
 }
 body{
-	display: flex;
+	/*flexbox for overall page children include header mainsection footer*/
+	display: flex; 
 	flex-direction: column;
 	height: 100%;
 }
@@ -26,7 +27,9 @@ h6 {
 }
 
 .mainSection{
+	/*allows the main section to take up all available space pushing footer to the bottom*/
 	flex: 1;
+	/*flexbox for main section children include right center and left pane*/
 	display: flex;
 }
 
@@ -40,6 +43,7 @@ h6 {
 .invisible{
 	display: none;
 }
+
 #leftPane, #rightPane{
 	flex: 1.25;
 }
@@ -53,6 +57,7 @@ h6 {
 /*Center pane styling*/
 #centerPane{
 	flex: 2;
+	/*flexbox for center pane children include warrior heading gameIntro gameDirections and warriorflex */
 	display: flex;
 	flex-direction: column;
 }
@@ -71,6 +76,7 @@ h6 {
 
 #warriorFlex{
 	flex: 1.5;
+	/*flexbox for warrior selections*/
 	display: flex;
 }
 
@@ -92,6 +98,7 @@ h6 {
 }
 
 .warriorSelection{
+	/*flexbox for each warrior selection*/
 	display: flex;
 }
 
