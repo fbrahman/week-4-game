@@ -7,8 +7,10 @@ var game = {
 	characterArray:[],
 
 	playerChoice: function(x){
-		$(x).find("img.warriorImg").detach().appendTo("#playerChoiceImage");
-		console.log(x);
+	
+		// if (playerCharacter ===""){}
+			$(x).find("img.warriorImg").detach().appendTo("#playerChoiceImage");
+			
 	},	
 
 	computerChoice: function(){
@@ -36,9 +38,12 @@ var game = {
 	},
 
 	reset: function (){
-
+		$(".warriorSelection").click(function(){
+		game.playerChoice(this);
+	// console.log(this);
+	// $(this).find(".warriorImg").detach().appendTo("#playerChoiceImage");
+		})
 	}
-
 
 };
 
@@ -77,8 +82,5 @@ var character2 = new characters("Krillin", 100, 8, 800);
 var character3 = new characters("Android 18", 110, 9, 900);
 var character4 = new characters("Vegeta", 180, 15, 1500);
 
-$(".warriorSelection").click(function(){
-	game.playerChoice(this);
-	// console.log(this);
-	// $(this).find(".warriorImg").detach().appendTo("#playerChoiceImage");
-});
+// characters.attackCounterUpdate()
+game.reset();
