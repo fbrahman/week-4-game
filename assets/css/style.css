@@ -1,126 +1,142 @@
-html{
-	height: 100%;
-}
-body{
-	/*flexbox for overall page children include header mainsection footer*/
-	display: flex; 
-	flex-direction: column;
-	height: 100%;
-}
-h1 { 
-	font-size: 2em; 
-}
-h2 { 
-	font-size: 1.5em; 
-}
-h3 { 
-	font-size: 1.17em; 
-}
-h4 { 
-	font-size: 1.12em; 
-}
-h5 { 
-	font-size: .83em; 
-}
-h6 { 
-	font-size: .75em; 
+html {
+    height: 100%;
 }
 
-.mainSection{
-	/*allows the main section to take up all available space pushing footer to the bottom*/
-	flex: 1;
-	/*flexbox for main section children include right center and left pane*/
-	display: flex;
+body {
+    /*flexbox for overall page children include header mainsection footer*/
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.element{
-	border-color: yellow;
-	border-style: solid;
-	border-width: 1px;
+h1 {
+    font-size: 2em;
 }
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1.12em;
+}
+
+h5 {
+    font-size: .83em;
+}
+
+h6 {
+    font-size: .75em;
+}
+
+.mainSection {
+    /*allows the main section to take up all available space pushing footer to the bottom*/
+    flex: 1;
+    /*flexbox for main section children include right center and left pane*/
+    display: flex;
+}
+
+.element {
+    border-color: yellow;
+    border-style: solid;
+    border-width: 1px;
+}
+
 
 /*Invisibility class*/
-.invisible{
-	display: none;
+
+.invisible {
+    display: none;
 }
 
-#leftPane, #rightPane{
-	flex: 2;
+#leftPane,
+#rightPane {
+    flex: 2;
 }
 
 
 /*Center pane styling*/
-#centerPane{
-	flex: 1;
-	/*flexbox for center pane children include warrior heading gameIntro gameDirections and warriorflex */
-	display: flex;
-	flex-direction: column;
+
+#centerPane {
+    flex: 1;
+    /*flexbox for center pane children include warrior heading gameIntro gameDirections and warriorflex */
+    display: flex;
+    flex-direction: column;
 }
 
-#warriorHeading{
-	flex:.5;
+#warriorHeading {
+    flex: .5;
 }
 
-#gameIntro{
-	flex: .5
+#gameIntro {
+    flex: .5
 }
 
-#gameDirections{
-	flex: 2;
+#gameDirections {
+    flex: 2;
 }
 
-#warriorFlex{
-	flex: 1.5;
-	/*flexbox for warrior selections*/
-	display: flex;
+#warriorFlex {
+    flex: 1.5;
+    /*flexbox for warrior selections*/
+    display: flex;
 }
 
-#warriorOne{
-	flex: 1;
-	overflow: hidden;
-}
-#warriorTwo{
-	flex: 1;
-	overflow: hidden;
-}
-#warriorThree{
-	flex: 1;
-	overflow: hidden;
-}
-#warriorFour{
-	flex: 1;
-	overflow: hidden;
+#warriorOne {
+    flex: 1;
+    overflow: hidden;
 }
 
-.warriorSelection{
-	/*flexbox for each warrior selection*/
-	display: flex;
+#warriorTwo {
+    flex: 1;
+    overflow: hidden;
 }
 
-#warriorOnePic, #warriorTwoPic, #warriorThreePic, #warriorFourPic{
-/*	width: 5em;
+#warriorThree {
+    flex: 1;
+    overflow: hidden;
+}
+
+#warriorFour {
+    flex: 1;
+    overflow: hidden;
+}
+
+.warriorSelection {
+    /*flexbox for each warrior selection*/
+    display: flex;
+}
+
+#warriorOnePic,
+#warriorTwoPic,
+#warriorThreePic,
+#warriorFourPic {
+    /*	width: 5em;
 	flex: .5;*/
 }
 
-div .warriorPic{
-	flex: 1;
+div .warriorPic {
+    flex: 1;
 }
 
-div .warriorName{
-	flex: 3;
+div .warriorName {
+    flex: 3;
 }
 
-#name{
-	/*transform-origin: 0 0 0; */
-	display: flex;
-	align-items: flex-end;
-	vertical-align: bottom;
-	transform-origin: 0 2.5em 0;
-	transform: rotate(90deg);
-	white-space: nowrap;
-	font-size: 2em;
-
-/*    -webkit-transform: rotate(90deg);
+#name {
+    /*transform-origin: 0 0 0; */
+    display: flex;
+    align-items: flex-end;
+    vertical-align: bottom;
+    transform-origin: 0 2.5em 0;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    font-size: 2em;
+    /*    -webkit-transform: rotate(90deg);
     -webkit-transform-origin: left top;
     -moz-transform: rotate(90deg);
     -moz-transform-origin: left top;
@@ -138,17 +154,23 @@ div .warriorName{
 */
 }
 
+
 /*flexbox for panes*/
 
-#computerAttackPower, #computerPowerLevel, #computerHP, 
-#playerAttackPower, #playerPowerLevel, #playerHP{
-	flex:.33;
+#computerAttackPower,
+#computerPowerLevel,
+#computerHP,
+#playerAttackPower,
+#playerPowerLevel,
+#playerHP {
+    flex: .33;
 }
 
-#computerChoiceImage, #playerChoiceImage{
-	flex: 2;
+#computerChoiceImage,
+#playerChoiceImage {
+    flex: 2;
 }
 
-.choiceArea{
-	display: flex;
+.choiceArea {
+    display: flex;
 }

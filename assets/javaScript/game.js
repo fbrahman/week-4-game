@@ -7,9 +7,8 @@ var game = {
 	characterArray:[],
 
 	playerChoice: function(x){
-	
 		// if (playerCharacter ===""){}
-			$(x).find("img.warriorImg").detach().appendTo("#playerChoiceImage");
+		$(x).find("img.warriorImg").detach().appendTo("#playerChoiceImage");
 			
 	},	
 
