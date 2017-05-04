@@ -33,6 +33,7 @@ h6 {
 	display: flex;
 }
 
+/*class used for layout*/
 .element{
 	border-color: yellow;
 	border-style: solid;
@@ -48,10 +49,9 @@ h6 {
 	flex: 2;
 }
 
-
 /*Center pane styling*/
 #centerPane{
-	flex: 1;
+	flex:.5;
 	/*flexbox for center pane children include warrior heading gameIntro gameDirections and warriorflex */
 	display: flex;
 	flex-direction: column;
@@ -75,24 +75,10 @@ h6 {
 	display: flex;
 }
 
-#warriorOne{
-	flex: 1;
-	overflow: hidden;
-}
-#warriorTwo{
-	flex: 1;
-	overflow: hidden;
-}
-#warriorThree{
-	flex: 1;
-	overflow: hidden;
-}
-#warriorFour{
-	flex: 1;
-	overflow: hidden;
-}
 
 .warriorSelection{
+	flex:1;
+	overflow:hidden;
 	/*flexbox for each warrior selection*/
 	display: flex;
 }
