@@ -37,6 +37,22 @@ var game = {
 
 	},
 
+	setGameBoard: function(){
+		for(i = 0; i < this.characterArray.length; i++){
+			var charImg = $("<img>");
+
+			charImg.addClass("warriorPic");
+
+			charImg.attr("src",this.characterArray[i].cImg);
+
+			charImg.attr("indexValue", i);
+
+			$("#warriorFlex").append(charImg);
+
+			console.log(this.characterArray[i].cImg);
+		}
+	},
+
 	reset: function (){
 		$(".warriorSelection").click(function(){
 		game.playerChoice(this);
@@ -81,6 +97,11 @@ var character1 = new characters("Goku", 120, 10, 1000);
 var character2 = new characters("Krillin", 100, 8, 800);
 var character3 = new characters("Android 18", 110, 9, 900);
 var character4 = new characters("Vegeta", 180, 15, 1500);
+
+character1.cImg = "assets/images/goku.png";
+character2.cImg = "assets/images/krillin.png";
+character3.cImg = "assets/images/android18.png";
+character4.cImg = "assets/images/Vegeta.png";
 
 // characters.attackCounterUpdate()
 game.reset();
