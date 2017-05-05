@@ -2,15 +2,17 @@
 // will have another object called chracters
 // Game object will have different functions for battling
 var game = {
-	playerCharacter: "",
-	computerCharacter: "",
+	playerCharacter: undefined,
+	computerCharacter: undefined,
 	characterArray:[],
 
 	playerChoice: function(x){
-		if (this.playerCharacter ===""){
+		if (this.playerCharacter ===undefined){
 			var indexValue = $(x).find("img.warriorImg").attr("indexValue");
 			this.playerCharacter = this.characterArray[indexValue];
-			$(x).find("img.warriorImg").detach().appendTo("#playerChoiceImage");
+			$(x).find("img.warriorImg").slideUp(function(){
+				$(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
+			});
 		}
 		else{
 			this.computerChoice(x);
@@ -18,13 +20,15 @@ var game = {
 	},	
 
 	computerChoice: function(x){
-		if (this.computerCharacter ===""){
+		if (this.computerCharacter ===undefined){
 			var indexValue = $(x).find("img.warriorImg").attr("indexValue");
 			this.computerCharacter = this.characterArray[indexValue];
-			$(x).find("img.warriorImg").detach().appendTo("#computerChoiceImage");
-		}
+			$(x).find("img.warriorImg").slideUp(function(){
+				$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
+			});
+		}		
 		else{
-			return;
+			console.log(x);
 		}
 	//show attack button after computer is selected.
 	},
@@ -33,6 +37,7 @@ var game = {
 		this.playerCharacter.cAttackCounter++;
 		this.damage(this.playerCharacter);
 		this.powerLevelIncrease(this.playerCharacter);
+		this.computerAttack();
 	},
 
 	computerAttack: function(){
@@ -62,9 +67,11 @@ var game = {
 		else{
 			console.log("you should not be seeing this")
 		}
+		this.winLoss();
 	},
 
 	powerLevelIncrease: function (x) {
+		console.log("this is the old PL",x.cPL);
 		x.cPL = x.cPL+1000;
 		console.log("this is new PL",x.cPL);
 		this.attackLevelIncrease(x);
@@ -73,17 +80,32 @@ var game = {
 
 	attackLevelIncrease: function (x){
 		console.log("this is attack before change",x.cAttack);
-		console.log("this is x.CPL/100", x.cPL/100);
-		x.cAttack = x.cAttack+(x.cPL/500);
+		console.log("this is x.CPL/500", x.cPL/500);
+		x.cAttack = Math.round(x.cAttack+(x.cPL/500));
 		console.log("this is new attack",x.cAttack);
 		//write new attack on screen
+		
 	},
 
 	winLoss: function (){
-
+		if (this.playerCharacter.cHP > 0){
+			console.log("player is still alive")
+		}
+		else{
+			console.log("the player has died")
+		};
+		
+		if(this.computerCharacter.cHP > 0){
+			console.log("Computer is still alive")
+		}
+		else{
+			console.log("the computer has died")
+		};
 	},
 
 	newOpponent: function(){
+		//show text choose a new opponent
+		this.computerCharacter = undefined;
 
 	},
 
