@@ -9,7 +9,7 @@ var game = {
 	playerChoice: function(x){
 		if (this.playerCharacter ===undefined){
 			var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-			this.playerCharacter = this.characterArray[indexValue];
+			this.playerCharacter = $.extend(true,{},( this.characterArray[indexValue]));
 			$(x).find("img.warriorImg").slideUp(function(){
 				$(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
 			});
@@ -25,7 +25,7 @@ var game = {
 			if ($("#computerChoiceImage").children().length < 1){ 
 
 				var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-				this.computerCharacter = this.characterArray[indexValue];
+				this.computerCharacter = $.extend(true,{},(this.characterArray[indexValue]));
 				$(x).find("img.warriorImg").slideUp(function(){
 					$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
 				});
@@ -39,7 +39,8 @@ var game = {
 					});
 
 					var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-					this.computerCharacter = this.characterArray[indexValue];
+					this.computerCharacter = $.extend(true,{},(this.characterArray[indexValue]))
+					console.log("this is the new computer choice", this.computerCharacter);
 					$(x).find("img.warriorImg").slideUp(function(){
 						$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
 					});
@@ -123,6 +124,7 @@ var game = {
 		}
 		else{
 			console.log("the computer has died")
+			this.newOpponent();
 		};
 	},
 
@@ -157,11 +159,26 @@ var game = {
 	},
 
 	reset: function (){
+		this.playerCharacter=undefined;
+		this.computerCharacter=undefined;
+		$("#warriorFlex").empty();
+		$("#playerChoiceImage").empty();
+		$("#computerChoiceImage").empty();
+		
 		this.setGameBoard();
+
 		$(".warriorSelection").click(function(){
 		game.playerChoice(this);
 	// console.log(this);
 	// $(this).find(".warriorImg").detach().appendTo("#playerChoiceImage");
+		})
+
+		$("#attack").off().click(function(){
+			game.playerAttack();
+		})
+
+		$("#reset").off().click(function(){
+			game.reset();
 		})
 	}
 

@@ -74,7 +74,7 @@ h6 {
     flex: .5
 }
 
-#gameDirections {
+#gameBoard {
     flex: 2;
 }
 
@@ -89,6 +89,10 @@ h6 {
 	overflow:hidden;
 	/*flexbox for each warrior selection*/
 	display: flex;
+}
+
+.warriorPic .warriorImg{
+    width: 92px;
 }
 
 #warriorOnePic,
