@@ -21,14 +21,37 @@ var game = {
 
 	computerChoice: function(x){
 		if (this.computerCharacter ===undefined){
-			var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-			this.computerCharacter = this.characterArray[indexValue];
-			$(x).find("img.warriorImg").slideUp(function(){
-				$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
-			});
+			
+			if ($("#computerChoiceImage").children().length < 1){ 
+
+				var indexValue = $(x).find("img.warriorImg").attr("indexValue");
+				this.computerCharacter = this.characterArray[indexValue];
+				$(x).find("img.warriorImg").slideUp(function(){
+					$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
+				});
+			}
+
+			else{
+
+				if($(x).children(".warriorPic").children().length > 0){	
+					$("#computerChoiceImage").children("img.warriorImg").slideUp(function(){
+						$("#computerChoiceImage").children("img.warriorImg").detach()
+					});
+
+					var indexValue = $(x).find("img.warriorImg").attr("indexValue");
+					this.computerCharacter = this.characterArray[indexValue];
+					$(x).find("img.warriorImg").slideUp(function(){
+						$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
+					});
+				}
+				else{
+					console.log(x);
+				}
+			}
 		}		
 		else{
 			console.log(x);
+			console.log($(x).children(".warriorPic").children().length);
 		}
 	//show attack button after computer is selected.
 	},
