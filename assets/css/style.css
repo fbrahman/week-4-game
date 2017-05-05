@@ -91,6 +91,10 @@ h6 {
 	display: flex;
 }
 
+.warriorPic .warriorImg{
+    width: 92px;
+}
+
 #warriorOnePic,
 #warriorTwoPic,
 #warriorThreePic,
