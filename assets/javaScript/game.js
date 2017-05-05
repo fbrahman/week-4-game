@@ -145,16 +145,16 @@ var game = {
 			var $elem = $("#warriorFlex");
 
 			$elem.append(
-					$("<div>",{"class":"warriorSelection"}).append(
-						$("<div>", {"class":"warriorPic"}).append(
-							$("<img>",{"class":"warriorImg","src":this.characterArray[i].cImg, "indexValue": i})
-						)
-					).append(
+				$("<div>",{"class":"warriorSelection"}).append(
 					$("<div>", {"class":"warriorName"}).append(
 						$("<p>",{"class":"name", text:this.characterArray[i].cName})
-						)
 					)
-				);	
+				).append(
+					$("<div>", {"class":"warriorPic"}).append(
+						$("<img>",{"class":"warriorImg","src":this.characterArray[i].cImg, "indexValue": i})
+					)
+				)
+			);	
 		}
 	},
 
