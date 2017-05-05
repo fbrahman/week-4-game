@@ -55,12 +55,12 @@ h6 {
 
 #leftPane,
 #rightPane {
-    flex: 2;
+    flex: 1;
 }
 
 /*Center pane styling*/
 #centerPane{
-	flex:.5;
+	flex:1;
 	/*flexbox for center pane children include warrior heading gameIntro gameDirections and warriorflex */
 	display: flex;
 	flex-direction: column;
