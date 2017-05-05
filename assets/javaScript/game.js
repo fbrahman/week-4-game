@@ -40,17 +40,24 @@ var game = {
 	},
 
 	damage: function (x){
+		var damage = x.cAttack;
 		console.log("this is damage",x.cAttack);
 		//display current attack level  as damage for opposing character
-		this.hpUpdate(x);
+		this.hpUpdate(x, damage);
 	},
 
-	hpUpdate: function(x){
+	hpUpdate: function(x, damage){
 		if (x === this.playerCharacter){
 			console.log("the player called me")
+			console.log("Computer health before update", this.computerCharacter.cHP);
+			this.computerCharacter.cHP -= damage;
+			console.log("Computer health after update", this.computerCharacter.cHP);
 		}
 		else if (x === this.computerCharacter){
-			console.log("the computer called me")
+			console.log("the computer called me");
+			console.log("Player health before update", this.playerCharacter.cHP);
+			this.playerCharacter.cHP -= damage;
+			console.log("Player health after update", this.playerCharacter.cHP);
 		}
 		else{
 			console.log("you should not be seeing this")
