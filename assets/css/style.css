@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-image: url("../images/blueBG.png");
 }
 
 h1 {
@@ -93,6 +94,34 @@ h6 {
    	justify-content: center;
 }
 
+.ATTHeader, .PLHeader, .HPHeader{
+	padding: 3% 0 3% 0;
+}
+
+.ATTHeader{
+	background-color: #FC4335;
+}
+
+#pAP, #cAP{
+	background-color: #FF5B4F;
+}
+
+.PLHeader{
+	background-color: #5B10FC;
+}
+
+#pPL, #cPL{
+	background-color: #8247FF;
+}
+
+.HPHeader{
+	background-color: #FCD50C;
+}
+
+#pHP, #cHP{
+	background-color: #FFE143;
+}
+
 
 .currentInfo{
 	flex: 1;
@@ -129,6 +158,9 @@ h6 {
  	display:flex;
  	align-items: center;
  	padding: 0 2% 0 2%;
+ 	font-size: 1.2em;
+ 	line-height: 1.4em;
+
 }
 
 #warriorHeading {
@@ -167,7 +199,8 @@ h6 {
 	display: flex;	
 	justify-content: space-around;
 	align-items: center;
-	padding: .5% 0 .5% 0;
+	padding: 1% 0 1% 0;
+	background-color: black;
 }
 
 #warriorFlex {
@@ -220,8 +253,23 @@ div .warriorName {
 	text-align: center;
 }
 
+.warriorHP0, .warriorHP1, .warriorHP2, .warriorHP3{
+	background-color: #FCD50C;
+}
+
+.warriorPL0, .warriorPL1, .warriorPL2, .warriorPL3{
+	background-color: #5B10FC;
+}
+
+.warriorAtt0, .warriorAtt1, .warriorAtt2, .warriorAtt3{
+	background-color: #FC4335;
+}
+
+
+
 #copyright{
 	text-align: center;
+	padding: .5% 0 .5% 0;
 }
 
 /*-----------------------------------*/

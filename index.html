@@ -11,45 +11,47 @@
     <header>
         <h1 id="title">DBZ RPG</h1>
     </header>
-    <section class="mainSection element">
-        <div id="leftPane" class="element choiceArea">
+    <section class="mainSection">
+        <div id="leftPane" class="choiceArea">
             <div id="playerChoiceImage">
             <!-- populated by jQuery -->
             </div>
             <div class="warriorInfoBar">
 	            <div id="playerHP" class="element">
-	                <p class="element">Health Points</p>
-	                <p class="currentInfo element" id="pHP">
+	                <p class="HPHeader">Health Points</p>
+	                <p class="currentInfo" id="pHP">
 	                <!-- populated by jQuery -->
 	                </p>
 	            </div>
 	            <div id="playerPowerLevel" class="element">
-	                <p class="element">Power Level</p>
-	               	<p class="currentInfo element" id="pPL">
+	                <p class="PLHeader">Power Level</p>
+	               	<p class="currentInfo" id="pPL">
 	                <!-- populated by jQuery -->
 	                </p>
 	            </div>
 	            <div id="playerAttackPower" class="element">
-	                <p class="element">Attack Power</p>
-	                <p class="currentInfo element" id="pAP">
+	                <p class="ATTHeader">Attack Power</p>
+	                <p class="currentInfo" id="pAP">
 	                <!-- populated by jQuery -->
 	                </p>
 	            </div>
 	        </div>
         </div>
         <div id="centerPane" class="element">
-            <p id="gameIntro" class="element">Four fighters enter and only fighter can leave! Do you have what it takes to be the last man standing? Choose your warrior carefully and start your journey on three one-on-one battles to the death! Good Luck!</p>
+            <p id="gameIntro" class="element">
+            	Four fighters enter and only fighter can leave! Do you have what it takes to be the last man standing? Choose your warrior carefully and start your journey on three one-on-one battles to the death! Good Luck!
+            </p>
             <h2 id="warriorHeading" class="element">Click an image to choose your warrior. Choose wisely!</h2>
             <div id="gameBoard" class="element">
-                <div id="fightingArea" class="element">
-                	<div id="playerFightingArea" class="element">
+                <div id="fightingArea">
+                	<div id="playerFightingArea">
                 		<!-- populated by jQuery -->
                 	</div>
-                	<div id="computerFightingArea" class="element">
+                	<div id="computerFightingArea">
                 		<!-- populated by jQuery -->
                 	</div>
                 </div>
-                <div id="buttons" class="element">
+                <div id="buttons">
                     <div id="buttonReset">	
                     	<button id="reset" class="myButton">Reset</button>
                     </div>
@@ -62,22 +64,22 @@
                 <!-- Populated by jQuery -->
             </div>
         </div>
-        <div id="rightPane" class="element choiceArea">
+        <div id="rightPane" class="choiceArea">
        		<div class="warriorInfoBar">
 	            <div id="computerHP" class="element">
-	                <p>Health Points</p>
+	                <p class="HPHeader">Health Points</p>
 	                <p class="currentInfo" id="cHP">
 	                <!-- populated by jQuery -->
 	                </p>
 	            </div>
 	            <div id="computerPowerLevel" class="element">
-	                <p>Power Level</p>
+	                <p class="PLHeader">Power Level</p>
 	                <p class="currentInfo" id="cPL">
 	                <!-- populated by jQuery -->
 	                </p>
 	            </div>
 	            <div id="computerAttackPower" class="element">
-	                <p>Attack Power</p>
+	                <p class="ATTHeader">Attack Power</p>
 	                <p class="currentInfo" id="cAP">
 	                <!-- populated by jQuery -->
 	                </p>
@@ -89,7 +91,7 @@
         </div>
     </section>
     <footer>
-        <div id="copyright" class="element">
+        <div id="copyright">
             &#169; Copyright 2017 Fahad Rahman
         </div>
     </footer>

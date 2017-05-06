@@ -94,10 +94,10 @@ var game = {
         //display current attack level  as damage for opposing character
 
         if (x === this.playerCharacter){
-        	$("#computerFightingArea").text("-"+damage);
+        	$("#computerFightingArea").text("-"+damage).hide().fadeIn().delay(600).fadeOut("slow");
         }
         else if (x=== this.computerCharacter){
-        	$("#playerFightingArea").text("-"+damage);
+        	$("#playerFightingArea").text("-"+damage).hide().fadeIn().delay(600).fadeOut("slow");
         }
         else{
         	console.log("damage if/else: You should not be seeing this");
