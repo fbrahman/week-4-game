@@ -6,6 +6,7 @@ var game = {
     computerCharacter: undefined,
     characterArray: [],
     opponentsDefeated: 0,
+    PLExtreme: 0,
 
     playerChoice: function(x) {
         if (this.playerCharacter === undefined) {
@@ -129,8 +130,11 @@ var game = {
         x.cPL = x.cPL + 1000;
         $("#pPL").text(game.playerCharacter.cPL);
         console.log("this is new PL", x.cPL);
-        if (game.playerCharacter.cPL > 9000) {
-            $("#warriorHeading").text("It's OVER 9000!!!!!");
+        if(game.PLExtreme<1){
+            if (game.playerCharacter.cPL > 9000) {
+                $("#warriorHeading").text("It's OVER 9000!!!!!");
+                this.PLExtreme++;
+            }
         }
         this.attackLevelIncrease(x);
         //write new PL on screen
@@ -211,6 +215,7 @@ var game = {
         this.playerCharacter = undefined;
         this.computerCharacter = undefined;
         this.opponentsDefeated = 0;
+        this.PLExtreme = 0;
         $("#warriorFlex").empty();
         $("#playerChoiceImage").empty();
         $("#computerChoiceImage").empty();
