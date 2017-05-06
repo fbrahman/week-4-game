@@ -84,11 +84,22 @@ h6 {
 #playerPowerLevel,
 #playerHP {
     flex: 1;
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
     font-weight: bold;
     padding: 2% 0 0 0;
+   	display: flex;
+   	flex-direction: column;
+   	justify-content: center;
 
+}
+
+.currentInfo{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
 }
 
 #computerChoiceImage,

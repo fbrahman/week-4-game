@@ -14,7 +14,12 @@ var game = {
             $(x).find("img.warriorImg").slideUp(function() {
                 $(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
             
-            $("#warriorHeading").text("Choose your opponent!")
+            $("#warriorHeading").text("Choose your opponent!");
+
+            $("#pHP").text(game.playerCharacter.cHP);
+            $("#pPL").text(game.playerCharacter.cPL);
+            $('#pAP').text(game.playerCharacter.cAttack);
+
             });
         } else {
             this.computerChoice(x);
@@ -34,6 +39,10 @@ var game = {
                     $(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
                 });
 
+                $("#cHP").text(game.computerCharacter.cHP);
+                $("#cPL").text(game.computerCharacter.cPL);
+                $('#cAP').text(game.computerCharacter.cAttack);
+
                 $("#attack").attr("disabled",false);
 
             } else {
@@ -49,6 +58,10 @@ var game = {
                     $(x).find("img.warriorImg").slideUp(function() {
                         $(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
                     });
+
+                    $("#cHP").text(game.computerCharacter.cHP);
+                    $("#cPL").text(game.computerCharacter.cPL);
+                    $('#cAP').text(game.computerCharacter.cAttack);
 
                     $("#warriorHeading").text("Press the attack button to attack!")
                     $("#attack").attr("disabled",false);
@@ -87,11 +100,13 @@ var game = {
             console.log("the player called me")
             console.log("Computer health before update", this.computerCharacter.cHP);
             this.computerCharacter.cHP -= damage;
+            $("#cHP").text(game.computerCharacter.cHP);
             console.log("Computer health after update", this.computerCharacter.cHP);
         } else if (x === this.computerCharacter) {
             console.log("the computer called me");
             console.log("Player health before update", this.playerCharacter.cHP);
             this.playerCharacter.cHP -= damage;
+            $("#pHP").text(game.playerCharacter.cHP);
             console.log("Player health after update", this.playerCharacter.cHP);
         } else {
             console.log("you should not be seeing this")
@@ -102,6 +117,7 @@ var game = {
     powerLevelIncrease: function(x) {
         console.log("this is the old PL", x.cPL);
         x.cPL = x.cPL + 1000;
+        $("#pPL").text(game.playerCharacter.cPL);
         console.log("this is new PL", x.cPL);
         this.attackLevelIncrease(x);
         //write new PL on screen
@@ -111,6 +127,7 @@ var game = {
         console.log("this is attack before change", x.cAttack);
         console.log("this is x.CPL/650", x.cPL / 650);
         x.cAttack = Math.round(x.cAttack + (x.cPL / 650));
+        $('#pAP').text(game.playerCharacter.cAttack);
         console.log("this is new attack", x.cAttack);
         //write new attack on screen
 
@@ -185,6 +202,13 @@ var game = {
         $("#warriorFlex").empty();
         $("#playerChoiceImage").empty();
         $("#computerChoiceImage").empty();
+        $("#pHP").empty();
+        $("#pPL").empty();
+        $('#pAP').empty();
+        $("#cHP").empty();
+        $("#cPL").empty();
+        $('#cAP').empty();
+
         $("#warriorHeading").text("Click an image to choose your warrior. Choose wisely!");
         $("#attack").attr("disabled",true);
 
