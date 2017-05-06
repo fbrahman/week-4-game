@@ -48,7 +48,6 @@ h6 {
 }
 
 /*Invisibility class*/
-
 .invisible {
     display: none;
 }
@@ -60,8 +59,8 @@ h6 {
 
 /*Center pane styling*/
 #centerPane{
-	flex:1;
-	/*flexbox for center pane children include warrior heading gameIntro gameDirections and warriorflex */
+	flex:2;
+	/*flexbox for center pane children include warrior heading gameIntro gameboard and warriorflex */
 	display: flex;
 	flex-direction: column;
 }
@@ -86,29 +85,31 @@ h6 {
 
 .warriorSelection{
 	flex:1;
-	overflow:hidden;
 	/*flexbox for each warrior selection*/
 	display: flex;
+	flex-direction: column;
 }
 
 .warriorPic .warriorImg{
-    width: 92px;
-}
-
-#warriorOnePic,
-#warriorTwoPic,
-#warriorThreePic,
-#warriorFourPic {
-    /*	width: 5em;
-	flex: .5;*/
+    /*width: 98px;*/
+   width: 100%;
+   height: 280%
 }
 
 div .warriorPic {
     flex: 1;
+    overflow: hidden;
+    background-color: grey;
 }
 
 div .warriorName {
-    flex: 3;
+    /*flex: 1;*/
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.warriorHP0, .warriorPL0, .warriorAtt0{
+	/*flex: 1;*/
 }
 
 #name {

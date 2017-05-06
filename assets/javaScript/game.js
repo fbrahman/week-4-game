@@ -104,8 +104,8 @@ var game = {
 
 	attackLevelIncrease: function (x){
 		console.log("this is attack before change",x.cAttack);
-		console.log("this is x.CPL/500", x.cPL/500);
-		x.cAttack = Math.round(x.cAttack+(x.cPL/500));
+		console.log("this is x.CPL/650", x.cPL/650);
+		x.cAttack = Math.round(x.cAttack+(x.cPL/650));
 		console.log("this is new attack",x.cAttack);
 		//write new attack on screen
 		
@@ -146,12 +146,24 @@ var game = {
 
 			$elem.append(
 				$("<div>",{"class":"warriorSelection"}).append(
-					$("<div>", {"class":"warriorName"}).append(
+					$("<div>", {"class":"warriorName element"}).append(
 						$("<p>",{"class":"name", text:this.characterArray[i].cName})
 					)
 				).append(
-					$("<div>", {"class":"warriorPic"}).append(
+					$("<div>", {"class":"warriorPic element"}).append(
 						$("<img>",{"class":"warriorImg","src":this.characterArray[i].cImg, "indexValue": i})
+					)
+				).append(
+					$("<div>", {"class":"element warriorHP"+i}).append(
+						$("<p>", {"class":"hp", text:"Health Points: "+this.characterArray[i].cHP})
+					)
+				).append(
+					$("<div>", {"class":"element warriorPL"+i}).append(
+						$("<p>", {"class": "pl", text:"Power Level:     "+this.characterArray[i].cPL})
+					)
+				).append(
+					$("<div>", {"class":"element warriorAtt"+i}).append(
+						$("<p>", {"class": "att", text:"Attack Level:    "+this.characterArray[i].cAttack})
 					)
 				)
 			);	
