@@ -1,105 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>RPG GAME</title>
-
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <title>RPG GAME</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-	<header>
-		<h1 id="title">RPG</h1>
-	</header>
-	<section class="mainSection element">
-		<div id="leftPane" class="element choiceArea">
-			<div id="playerChoiceImage">
-			</div>
-			<div id="playerHP">
-				Player HP
-			</div>
-			<div id="playerPowerLevel">
-				Player PL
-			</div>
-			<div id="playerAttackPower">
-				Player Attack Power
-			</div>
-			<!-- <img src="assets/images/goku.png"> -->
-		</div>
-		<div id="centerPane" class="element">
-			<p id="gameIntro" class="element">Four fighters enter and only fighter can leave! Do you have what it takes to be the last man standing? Choose your warrior carefully and start your journey on three one-on-one battles to the death! Good Luck!</p>
-			<h2 id="warriorHeading" class="element">Choose your warrior wisely.</h2>
-			<div id="gameBoard" class="element">
-				<div id="fightingArea">
-					
-				</div>
-				<div id="buttons">
-					<button id="attack">Attack</button>
-					<button id="reset">Reset</button>
-				</div>
-			</div>
-			<div id="warriorFlex" class="element">
-<!-- 				<div class="element warriorSelection">
-					<div class="warriorPic">	
-						<img src="assets/images/goku.png" id="warriorOnePic" class="warriorImg">
-					</div>
-					<div class="warriorName">
-						<p id="name">Goku</p>
-					</div>
-				</div> -->
-					
-<!-- 				<div class="element warriorSelection">
-					<div class="warriorPic">
-						<img src="assets/images/krillin.png" id="warriorTwoPic" class="warriorImg">
-					</div>
-					<div class="warriorName">
-						<p id="name">Krillin</p> 
-					</div>
-				</div> -->
-
-<!-- 				<div class="element warriorSelection">
-					<div class = "warriorPic">
-						<img src="assets/images/android18.png" id="warriorThreePic" class="warriorImg">
-					</div>
-					<div class="warriorName">
-						<p id="name">Android 18</p>
-					</div>
-				</div> -->
-
-<!-- 				<div class="element warriorSelection">
-					<div class = "warriorPic">
-						<img src="assets/images/vegeta.png" id="warriorFourPic" class="warriorImg">
-					</div>
-					<div class="warriorName">
-						<p id="name">Vegeta</p>
-					</div>
-				</div> -->
-			</div>			
-		</div>
-		<div id="rightPane" class="element choiceArea">
-			<div id="computerAttackPower">
-				Computer Attack Power
-			</div>
-			<div id="computerPowerLevel">
-				Computer PL
-			</div>
-			<div id="computerHP">
-				Computer HP
-			</div>
-			<div id="computerChoiceImage">
-				
-			</div>
-		</div>
-	</section>
-	<footer>
-		<div id="copyright" class="element">
-			&#169; Copyright 2017 Fahad Rahman
-		</div>	
-	</footer>
-
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-	<script type="text/javascript" src="assets/javaScript/game.js"></script>
+    <header>
+        <h1 id="title">RPG</h1>
+    </header>
+    <section class="mainSection element">
+        <div id="leftPane" class="element choiceArea">
+            <div id="playerChoiceImage">
+            </div>
+            <div id="playerHP">
+                Player HP
+            </div>
+            <div id="playerPowerLevel">
+                Player PL
+            </div>
+            <div id="playerAttackPower">
+                Player Attack Power
+            </div>
+            <!-- <img src="assets/images/goku.png"> -->
+        </div>
+        <div id="centerPane" class="element">
+            <p id="gameIntro" class="element">Four fighters enter and only fighter can leave! Do you have what it takes to be the last man standing? Choose your warrior carefully and start your journey on three one-on-one battles to the death! Good Luck!</p>
+            <h2 id="warriorHeading" class="element">Click an image to choose your warrior. Choose wisely!</h2>
+            <div id="gameBoard" class="element">
+                <div id="fightingArea">
+                </div>
+                <div id="buttons">
+                    <button id="attack" disabled="true">Attack</button>
+                    <button id="reset">Reset</button>
+                </div>
+            </div>
+            <div id="warriorFlex" class="element">
+                <!-- Populated by jQuery -->
+            </div>
+        </div>
+        <div id="rightPane" class="element choiceArea">
+            <div id="computerAttackPower">
+                Computer Attack Power
+            </div>
+            <div id="computerPowerLevel">
+                Computer PL
+            </div>
+            <div id="computerHP">
+                Computer HP
+            </div>
+            <div id="computerChoiceImage">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="copyright" class="element">
+            &#169; Copyright 2017 Fahad Rahman
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javaScript/game.js"></script>
 </body>
+
 </html>

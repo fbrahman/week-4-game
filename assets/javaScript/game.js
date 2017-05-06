@@ -2,220 +2,226 @@
 // will have another object called chracters
 // Game object will have different functions for battling
 var game = {
-	playerCharacter: undefined,
-	computerCharacter: undefined,
-	characterArray:[],
+    playerCharacter: undefined,
+    computerCharacter: undefined,
+    characterArray: [],
+    opponentsDefeated: 0,
 
-	playerChoice: function(x){
-		if (this.playerCharacter ===undefined){
-			var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-			this.playerCharacter = $.extend(true,{},( this.characterArray[indexValue]));
-			$(x).find("img.warriorImg").slideUp(function(){
-				$(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
-			});
-		}
-		else{
-			this.computerChoice(x);
-		}	
-	},	
+    playerChoice: function(x) {
+        if (this.playerCharacter === undefined) {
+            var indexValue = $(x).find("img.warriorImg").attr("indexValue");
+            this.playerCharacter = $.extend(true, {}, (this.characterArray[indexValue]));
+            $(x).find("img.warriorImg").slideUp(function() {
+                $(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
+            
+            $("#warriorHeading").text("Choose your opponent!")
+            });
+        } else {
+            this.computerChoice(x);
+        }
+    },
 
-	computerChoice: function(x){
-		if (this.computerCharacter ===undefined){
-			
-			if ($("#computerChoiceImage").children().length < 1){ 
+    computerChoice: function(x) {
+        if (this.computerCharacter === undefined) {
 
-				var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-				this.computerCharacter = $.extend(true,{},(this.characterArray[indexValue]));
-				$(x).find("img.warriorImg").slideUp(function(){
-					$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
-				});
-			}
+            if ($("#computerChoiceImage").children().length < 1) {
 
-			else{
+            	$("#warriorHeading").text("Press the attack button to attack!")
 
-				if($(x).children(".warriorPic").children().length > 0){	
-					$("#computerChoiceImage").children("img.warriorImg").slideUp(function(){
-						$("#computerChoiceImage").children("img.warriorImg").detach()
-					});
+                var indexValue = $(x).find("img.warriorImg").attr("indexValue");
+                this.computerCharacter = $.extend(true, {}, (this.characterArray[indexValue]));
+                $(x).find("img.warriorImg").slideUp(function() {
+                    $(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
+                });
 
-					var indexValue = $(x).find("img.warriorImg").attr("indexValue");
-					this.computerCharacter = $.extend(true,{},(this.characterArray[indexValue]))
-					console.log("this is the new computer choice", this.computerCharacter);
-					$(x).find("img.warriorImg").slideUp(function(){
-						$(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
-					});
-				}
-				else{
-					console.log(x);
-				}
-			}
-		}		
-		else{
-			console.log(x);
-			console.log($(x).children(".warriorPic").children().length);
-		}
-	//show attack button after computer is selected.
-	},
+                $("#attack").attr("disabled",false);
 
-	playerAttack: function (){
-		this.playerCharacter.cAttackCounter++;
-		this.damage(this.playerCharacter);
-		this.powerLevelIncrease(this.playerCharacter);
-		this.computerAttack();
-	},
+            } else {
 
-	computerAttack: function(){
-		this.damage(this.computerCharacter);
-	},
+                if ($(x).children(".warriorPic").children().length > 0) {
+                    $("#computerChoiceImage").children("img.warriorImg").slideUp(function() {
+                        $("#computerChoiceImage").children("img.warriorImg").detach()
+                    });
 
-	damage: function (x){
-		var damage = x.cAttack;
-		console.log("this is damage",x.cAttack);
-		//display current attack level  as damage for opposing character
-		this.hpUpdate(x, damage);
-	},
+                    var indexValue = $(x).find("img.warriorImg").attr("indexValue");
+                    this.computerCharacter = $.extend(true, {}, (this.characterArray[indexValue]))
+                    console.log("this is the new computer choice", this.computerCharacter);
+                    $(x).find("img.warriorImg").slideUp(function() {
+                        $(x).find("img.warriorImg").detach().hide().appendTo("#computerChoiceImage").slideDown();
+                    });
 
-	hpUpdate: function(x, damage){
-		if (x === this.playerCharacter){
-			console.log("the player called me")
-			console.log("Computer health before update", this.computerCharacter.cHP);
-			this.computerCharacter.cHP -= damage;
-			console.log("Computer health after update", this.computerCharacter.cHP);
-		}
-		else if (x === this.computerCharacter){
-			console.log("the computer called me");
-			console.log("Player health before update", this.playerCharacter.cHP);
-			this.playerCharacter.cHP -= damage;
-			console.log("Player health after update", this.playerCharacter.cHP);
-		}
-		else{
-			console.log("you should not be seeing this")
-		}
-		this.winLoss();
-	},
+                    $("#warriorHeading").text("Press the attack button to attack!")
+                    $("#attack").attr("disabled",false);
 
-	powerLevelIncrease: function (x) {
-		console.log("this is the old PL",x.cPL);
-		x.cPL = x.cPL+1000;
-		console.log("this is new PL",x.cPL);
-		this.attackLevelIncrease(x);
-		//write new PL on screen
-	},
+                } else {
+                    console.log(x);
+                }
+            }
+        } else {
+            console.log(x);
+            console.log($(x).children(".warriorPic").children().length);
+        }
+        //show attack button after computer is selected.
+    },
 
-	attackLevelIncrease: function (x){
-		console.log("this is attack before change",x.cAttack);
-		console.log("this is x.CPL/650", x.cPL/650);
-		x.cAttack = Math.round(x.cAttack+(x.cPL/650));
-		console.log("this is new attack",x.cAttack);
-		//write new attack on screen
-		
-	},
+    playerAttack: function() {
+        this.playerCharacter.cAttackCounter++;
+        this.damage(this.playerCharacter);
+        this.powerLevelIncrease(this.playerCharacter);
+        this.computerAttack();
+    },
 
-	winLoss: function (){
-		if (this.playerCharacter.cHP > 0){
-			console.log("player is still alive")
-		}
-		else{
-			console.log("the player has died")
-		};
-		
-		if(this.computerCharacter.cHP > 0){
-			console.log("Computer is still alive")
-		}
-		else{
-			console.log("the computer has died")
-			this.newOpponent();
-		};
-	},
+    computerAttack: function() {
+        this.damage(this.computerCharacter);
+    },
 
-	newOpponent: function(){
-		//show text choose a new opponent
-		this.computerCharacter = undefined;
+    damage: function(x) {
+        var damage = x.cAttack;
+        console.log("this is damage", x.cAttack);
+        //display current attack level  as damage for opposing character
+        this.hpUpdate(x, damage);
+    },
 
-	},
+    hpUpdate: function(x, damage) {
+        if (x === this.playerCharacter) {
+            console.log("the player called me")
+            console.log("Computer health before update", this.computerCharacter.cHP);
+            this.computerCharacter.cHP -= damage;
+            console.log("Computer health after update", this.computerCharacter.cHP);
+        } else if (x === this.computerCharacter) {
+            console.log("the computer called me");
+            console.log("Player health before update", this.playerCharacter.cHP);
+            this.playerCharacter.cHP -= damage;
+            console.log("Player health after update", this.playerCharacter.cHP);
+        } else {
+            console.log("you should not be seeing this")
+        }
+        this.winLoss();
+    },
 
-	setGameBoard: function(){
-		for(i = 0; i < this.characterArray.length; i++){
-			// var charImg = $("<img>");
-			// charImg.addClass("warriorPic");
-			// charImg.attr("src",this.characterArray[i].cImg);
-			// charImg.attr("indexValue", i);
-			// $("#warriorFlex").append(charImg);
-			// console.log(this.characterArray[i].cImg);
-			var $elem = $("#warriorFlex");
+    powerLevelIncrease: function(x) {
+        console.log("this is the old PL", x.cPL);
+        x.cPL = x.cPL + 1000;
+        console.log("this is new PL", x.cPL);
+        this.attackLevelIncrease(x);
+        //write new PL on screen
+    },
 
-			$elem.append(
-				$("<div>",{"class":"warriorSelection"}).append(
-					$("<div>", {"class":"warriorName element"}).append(
-						$("<p>",{"class":"name", text:this.characterArray[i].cName})
-					)
-				).append(
-					$("<div>", {"class":"warriorPic element"}).append(
-						$("<img>",{"class":"warriorImg","src":this.characterArray[i].cImg, "indexValue": i})
-					)
-				).append(
-					$("<div>", {"class":"element warriorHP"+i}).append(
-						$("<p>", {"class":"hp", text:"Health Points: "+this.characterArray[i].cHP})
-					)
-				).append(
-					$("<div>", {"class":"element warriorPL"+i}).append(
-						$("<p>", {"class": "pl", text:"Power Level:     "+this.characterArray[i].cPL})
-					)
-				).append(
-					$("<div>", {"class":"element warriorAtt"+i}).append(
-						$("<p>", {"class": "att", text:"Attack Level:    "+this.characterArray[i].cAttack})
-					)
-				)
-			);	
-		}
-	},
+    attackLevelIncrease: function(x) {
+        console.log("this is attack before change", x.cAttack);
+        console.log("this is x.CPL/650", x.cPL / 650);
+        x.cAttack = Math.round(x.cAttack + (x.cPL / 650));
+        console.log("this is new attack", x.cAttack);
+        //write new attack on screen
 
-	reset: function (){
-		this.playerCharacter=undefined;
-		this.computerCharacter=undefined;
-		$("#warriorFlex").empty();
-		$("#playerChoiceImage").empty();
-		$("#computerChoiceImage").empty();
-		
-		this.setGameBoard();
+    },
 
-		$(".warriorSelection").click(function(){
-		game.playerChoice(this);
-	// console.log(this);
-	// $(this).find(".warriorImg").detach().appendTo("#playerChoiceImage");
-		})
+    winLoss: function() {
+        if (this.playerCharacter.cHP > 0) {
+            console.log("player is still alive")
+        } else {
+            console.log("the player has died")
+            $("#attack").attr("disabled", true);
+            $("#warriorHeading").text("You have lost! Press the reset button to try again!")
+        };
 
-		$("#attack").off().click(function(){
-			game.playerAttack();
-		})
+        if (this.computerCharacter.cHP > 0) {
+            console.log("Computer is still alive")
+        } else {
+            console.log("the computer has died")
+            $("#attack").attr("disabled",true);
+            this.newOpponent();
+            this.opponentsDefeated++;
+            if (this.opponentsDefeated<3){
+            	$("#warriorHeading").text("You have defeated your opponent. Choose your next opponent wisely!")
+        	}
+        	else{
+        		$("#warriorHeading").text("You have survived. For now... Press reset to start again")
+        	}
+        };
+    },
 
-		$("#reset").off().click(function(){
-			game.reset();
-		})
-	}
+    newOpponent: function() {
+        //show text choose a new opponent
+        this.computerCharacter = undefined;
+
+    },
+
+    setGameBoard: function() {
+        for (i = 0; i < this.characterArray.length; i++) {
+            
+            var $elem = $("#warriorFlex");
+
+            $elem.append(
+                $("<div>", { "class": "warriorSelection" }).append(
+                    $("<div>", { "class": "warriorName element" }).append(
+                        $("<p>", { "class": "name", text: this.characterArray[i].cName })
+                    )
+                ).append(
+                    $("<div>", { "class": "warriorPic element" }).append(
+                        $("<img>", { "class": "warriorImg", "src": this.characterArray[i].cImg, "indexValue": i })
+                    )
+                ).append(
+                    $("<div>", { "class": "element warriorHP" + i }).append(
+                        $("<p>", { "class": "hp", text: "Health Points: " + this.characterArray[i].cHP })
+                    )
+                ).append(
+                    $("<div>", { "class": "element warriorPL" + i }).append(
+                        $("<p>", { "class": "pl", text: "Power Level:     " + this.characterArray[i].cPL })
+                    )
+                ).append(
+                    $("<div>", { "class": "element warriorAtt" + i }).append(
+                        $("<p>", { "class": "att", text: "Attack Level:    " + this.characterArray[i].cAttack })
+                    )
+                )
+            );
+        }
+    },
+
+    reset: function() {
+        this.playerCharacter = undefined;
+        this.computerCharacter = undefined;
+        this.opponentsDefeated = 0;
+        $("#warriorFlex").empty();
+        $("#playerChoiceImage").empty();
+        $("#computerChoiceImage").empty();
+        $("#warriorHeading").text("Click an image to choose your warrior. Choose wisely!");
+        $("#attack").attr("disabled",true);
+
+        this.setGameBoard();
+
+        $(".warriorSelection").click(function() {
+            game.playerChoice(this);
+            // console.log(this);
+            // $(this).find(".warriorImg").detach().appendTo("#playerChoiceImage");
+        })
+
+
+       	$("#attack").off().click(function() {
+
+       	    	game.playerAttack();
+       	})
+
+
+        $("#reset").off().click(function() {
+            game.reset();
+        })
+    }
 
 };
 
-function characters(characterName, characterHP, characterAttack, characterPowerLevel, characterImg){
-	this.cName = characterName;
-	this.cHP = characterHP;
-	this.cAttack = characterAttack;
-	this.cPL = characterPowerLevel;
-	this.cImg = characterImg;
-	this.cAttackCounter = 1;
-	game.characterArray.push(this);
+function characters(characterName, characterHP, characterAttack, characterPowerLevel, characterImg) {
+    this.cName = characterName;
+    this.cHP = characterHP;
+    this.cAttack = characterAttack;
+    this.cPL = characterPowerLevel;
+    this.cImg = characterImg;
+    this.cAttackCounter = 1;
+    game.characterArray.push(this);
 };
 
 // characters.protoype = {
 // 	constructor:characters,
-
-// 	powerLevelIncrease: function () {
-// 		this.characterPowerLevel = this.cAttackCounter*this.characterPowerLevel
-// 	},
-
-// 	attackLevelIncrease: function (){
-// 		this.cAttack = this.cAttack*(this.characterPowerLevel/1000)
-// 	},
 // };
 
 var character1 = new characters("Goku", 120, 10, 1000);

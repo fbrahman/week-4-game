@@ -40,14 +40,18 @@ h6 {
     display: flex;
 }
 
+
 /*class used for layout*/
-.element{
-	border-color: yellow;
-	border-style: solid;
-	border-width: 1px;
+
+.element {
+    border-color: yellow;
+    border-style: solid;
+    border-width: 1px;
 }
 
+
 /*Invisibility class*/
+
 .invisible {
     display: none;
 }
@@ -57,20 +61,29 @@ h6 {
     flex: 1;
 }
 
+
 /*Center pane styling*/
-#centerPane{
-	flex:2;
-	/*flexbox for center pane children include warrior heading gameIntro gameboard and warriorflex */
-	display: flex;
-	flex-direction: column;
+
+#centerPane {
+    flex: 2;
+    /*flexbox for center pane children include warrior heading gameIntro gameboard and warriorflex */
+    display: flex;
+    flex-direction: column;
+}
+
+#gameIntro {
+    flex: .5;
+ 	display:flex;
+ 	align-items: center;
+ 	padding: 0 2% 0 2%;
 }
 
 #warriorHeading {
     flex: .5;
-}
-
-#gameIntro {
-    flex: .5
+    display:flex;
+    align-items: center;
+ 	justify-content: center;
+ 	padding: 0 2% 0 2%;
 }
 
 #gameBoard {
@@ -83,17 +96,17 @@ h6 {
     display: flex;
 }
 
-.warriorSelection{
-	flex:1;
-	/*flexbox for each warrior selection*/
-	display: flex;
-	flex-direction: column;
+.warriorSelection {
+    flex: 1;
+    /*flexbox for each warrior selection*/
+    display: flex;
+    flex-direction: column;
 }
 
-.warriorPic .warriorImg{
+.warriorPic .warriorImg {
     /*width: 98px;*/
-   width: 100%;
-   height: 280%
+    width: 100%;
+    height: 280%
 }
 
 div .warriorPic {
@@ -106,10 +119,24 @@ div .warriorName {
     /*flex: 1;*/
     font-size: 1.5em;
     text-align: center;
+    font-weight: bold;
+    padding: 1% 0 2% 0;
 }
 
-.warriorHP0, .warriorPL0, .warriorAtt0{
-	/*flex: 1;*/
+.warriorHP0,
+.warriorPL0,
+.warriorAtt0,
+.warriorHP1,
+.warriorPL1,
+.warriorAtt1,
+.warriorHP2,
+.warriorPL2,
+.warriorAtt2,
+.warriorHP3,
+.warriorPL3,
+.warriorAtt3 {
+	font-size: 1.1em;
+	padding: .5% 0 .5% 0;
 }
 
 #name {
