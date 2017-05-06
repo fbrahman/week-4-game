@@ -171,7 +171,7 @@ var game = {
                     )
                 ).append(
                     $("<div>", { "class": "element warriorAtt" + i }).append(
-                        $("<p>", { "class": "att", text: "Attack Level:    " + this.characterArray[i].cAttack })
+                        $("<p>", { "class": "att", text: "Attack Power:    " + this.characterArray[i].cAttack })
                     )
                 )
             );

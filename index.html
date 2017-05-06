@@ -9,22 +9,24 @@
 
 <body>
     <header>
-        <h1 id="title">RPG</h1>
+        <h1 id="title">DBZ RPG</h1>
     </header>
     <section class="mainSection element">
         <div id="leftPane" class="element choiceArea">
             <div id="playerChoiceImage">
+            <!-- populated by jQuery -->
             </div>
-            <div id="playerHP">
-                Player HP
-            </div>
-            <div id="playerPowerLevel">
-                Player PL
-            </div>
-            <div id="playerAttackPower">
-                Player Attack Power
-            </div>
-            <!-- <img src="assets/images/goku.png"> -->
+            <div class="warriorInfoBar">
+	            <div id="playerHP" class="element">
+	                Health Points
+	            </div>
+	            <div id="playerPowerLevel" class="element">
+	                Power Level
+	            </div>
+	            <div id="playerAttackPower" class="element">
+	                Attack Power
+	            </div>
+	        </div>
         </div>
         <div id="centerPane" class="element">
             <p id="gameIntro" class="element">Four fighters enter and only fighter can leave! Do you have what it takes to be the last man standing? Choose your warrior carefully and start your journey on three one-on-one battles to the death! Good Luck!</p>
@@ -42,16 +44,19 @@
             </div>
         </div>
         <div id="rightPane" class="element choiceArea">
-            <div id="computerAttackPower">
-                Computer Attack Power
-            </div>
-            <div id="computerPowerLevel">
-                Computer PL
-            </div>
-            <div id="computerHP">
-                Computer HP
-            </div>
+       		<div class="warriorInfoBar">
+	            <div id="computerHP" class="element">
+	                Health Points
+	            </div>
+	            <div id="computerPowerLevel" class="element">
+	                Power Level
+	            </div>
+	            <div id="computerAttackPower" class="element">
+	                Attack Power
+	            </div>
+	        </div>
             <div id="computerChoiceImage">
+            <!-- populated by jQuery -->
             </div>
         </div>
     </section>
