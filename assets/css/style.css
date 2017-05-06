@@ -50,10 +50,11 @@ h6 {
     border-width: 1px;
 }
 
-#title{
-	padding: 1% 2% 1% 1%;
-	text-align: right;
+#title {
+    padding: 1% 2% 1% 1%;
+    text-align: right;
 }
+
 
 /*Invisibility class*/
 
@@ -61,22 +62,26 @@ h6 {
     display: none;
 }
 
+
 /*Left and right pane styling*/
+
 .choiceArea {
     display: flex;
 }
 
+
 /*flex 1 in relation to center pane*/
+
 #leftPane,
 #rightPane {
     flex: 1;
 }
 
-.warriorInfoBar{
-	flex:1;
-	display: flex;
-	flex-direction: column;
-	/*display: none;*/
+.warriorInfoBar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /*display: none;*/
 }
 
 #computerAttackPower,
@@ -89,57 +94,61 @@ h6 {
     font-size: 2em;
     text-align: center;
     font-weight: bold;
-   	display: flex;
-   	flex-direction: column;
-   	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.ATTHeader, .PLHeader, .HPHeader{
-	padding: 3% 0 3% 0;
+.ATTHeader,
+.PLHeader,
+.HPHeader {
+    padding: 3% 0 3% 0;
 }
 
-.ATTHeader{
-	background-color: #FC4335;
+.ATTHeader {
+    background-color: #FC4335;
 }
 
-#pAP, #cAP{
-	background-color: #FF5B4F;
+#pAP,
+#cAP {
+    background-color: #FF5B4F;
 }
 
-.PLHeader{
-	background-color: #5B10FC;
+.PLHeader {
+    background-color: #5B10FC;
 }
 
-#pPL, #cPL{
-	background-color: #8247FF;
+#pPL,
+#cPL {
+    background-color: #8247FF;
 }
 
-.HPHeader{
-	background-color: #FCD50C;
+.HPHeader {
+    background-color: #FCD50C;
 }
 
-#pHP, #cHP{
-	background-color: #FFE143;
+#pHP,
+#cHP {
+    background-color: #FFE143;
 }
 
-
-.currentInfo{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 2em;
+.currentInfo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
 }
 
 #computerChoiceImage,
-#playerChoiceImage{
+#playerChoiceImage {
     flex: 1;
     overflow: hidden;
 }
 
 #computerChoiceImage .warriorImg,
-#playerChoiceImage .warriorImg{
-	width: 100%;
+#playerChoiceImage .warriorImg {
+    width: 100%;
     /*height: 280%*/
 }
 
@@ -155,52 +164,53 @@ h6 {
 
 #gameIntro {
     flex: .5;
- 	display:flex;
- 	align-items: center;
- 	padding: 0 2% 0 2%;
- 	font-size: 1.2em;
- 	line-height: 1.4em;
-
+    display: flex;
+    align-items: center;
+    padding: 0 2% 0 2%;
+    font-size: 1.2em;
+    line-height: 1.4em;
 }
 
 #warriorHeading {
     flex: .5;
-    display:flex;
+    display: flex;
     align-items: center;
- 	justify-content: center;
- 	padding: 0 2% 0 2%;
- 	font-weight: bold;
+    justify-content: center;
+    padding: 0 2% 0 2%;
+    font-weight: bold;
 }
 
 #gameBoard {
     flex: 2;
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
-#fightingArea{
-	flex: 1;
-	display:flex;
-	background-image: url("../images/background.jpg");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
-#playerFightingArea, #computerFightingArea{
-	flex: 1;
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 5em;
-	font-weight: bold;
-	color: red;
+#fightingArea {
+    flex: 1;
+    display: flex;
+    background-image: url("../images/background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
-#buttons{
-	display: flex;	
-	justify-content: space-around;
-	align-items: center;
-	padding: 1% 0 1% 0;
-	background-color: black;
+#playerFightingArea,
+#computerFightingArea {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-weight: bold;
+    color: red;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1% 0 1% 0;
+    background-color: black;
 }
 
 #warriorFlex {
@@ -248,70 +258,82 @@ div .warriorName {
 .warriorHP3,
 .warriorPL3,
 .warriorAtt3 {
-	font-size: 1.1em;
-	padding: .5% 0 .5% 0;
-	text-align: center;
+    font-size: 1.1em;
+    padding: .5% 0 .5% 0;
+    text-align: center;
+    font-weight: bold;
 }
 
-.warriorHP0, .warriorHP1, .warriorHP2, .warriorHP3{
-	background-color: #FCD50C;
+.warriorHP0,
+.warriorHP1,
+.warriorHP2,
+.warriorHP3 {
+    background-color: #FCD50C;
 }
 
-.warriorPL0, .warriorPL1, .warriorPL2, .warriorPL3{
-	background-color: #5B10FC;
+.warriorPL0,
+.warriorPL1,
+.warriorPL2,
+.warriorPL3 {
+    background-color: #5B10FC;
 }
 
-.warriorAtt0, .warriorAtt1, .warriorAtt2, .warriorAtt3{
-	background-color: #FC4335;
+.warriorAtt0,
+.warriorAtt1,
+.warriorAtt2,
+.warriorAtt3 {
+    background-color: #FC4335;
 }
 
-
-
-#copyright{
-	text-align: center;
-	padding: .5% 0 .5% 0;
+#copyright {
+    text-align: center;
+    padding: .5% 0 .5% 0;
 }
+
 
 /*-----------------------------------*/
+
+
 /*button CSS*/
+
 .myButton {
-	-moz-box-shadow: -3px 2px 0px 0px #8a2a21;
-	-webkit-box-shadow: -3px 2px 0px 0px #8a2a21;
-	box-shadow: -3px 2px 0px 0px #8a2a21;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
-	background:-moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-	background:-o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-	background:-ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24437',GradientType=0);
-	background-color:#c62d1f;
-	-moz-border-radius:27px;
-	-webkit-border-radius:27px;
-	border-radius:27px;
-	border:4px solid #d02718;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:14px 44px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #810e05;
+    -moz-box-shadow: -3px 2px 0px 0px #8a2a21;
+    -webkit-box-shadow: -3px 2px 0px 0px #8a2a21;
+    box-shadow: -3px 2px 0px 0px #8a2a21;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
+    background: -moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background: -webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background: -o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background: -ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24437', GradientType=0);
+    background-color: #c62d1f;
+    -moz-border-radius: 27px;
+    -webkit-border-radius: 27px;
+    border-radius: 27px;
+    border: 4px solid #d02718;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 14px 44px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
 }
+
 .myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
-	background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-	background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-	background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-	background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
-	background-color:#f24437;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+    background: -moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background: -webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background: -o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background: -ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background: linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f', GradientType=0);
+    background-color: #f24437;
 }
+
 .myButton:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
-
-

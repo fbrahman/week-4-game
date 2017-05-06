@@ -13,12 +13,12 @@ var game = {
             this.playerCharacter = $.extend(true, {}, (this.characterArray[indexValue]));
             $(x).find("img.warriorImg").slideUp(function() {
                 $(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
-           
-            $("#warriorHeading").text("Choose your opponent!");
 
-            $("#pHP").text(game.playerCharacter.cHP);
-            $("#pPL").text(game.playerCharacter.cPL);
-            $('#pAP').text(game.playerCharacter.cAttack);
+                $("#warriorHeading").text("Choose your opponent!");
+
+                $("#pHP").text(game.playerCharacter.cHP);
+                $("#pPL").text(game.playerCharacter.cPL);
+                $('#pAP').text(game.playerCharacter.cAttack);
 
             });
         } else {
@@ -31,7 +31,7 @@ var game = {
 
             if ($("#computerChoiceImage").children().length < 1) {
 
-            	$("#warriorHeading").text("Press the attack button to attack!")
+                $("#warriorHeading").text("Press the attack button to attack!")
 
                 var indexValue = $(x).find("img.warriorImg").attr("indexValue");
                 this.computerCharacter = $.extend(true, {}, (this.characterArray[indexValue]));
@@ -43,7 +43,7 @@ var game = {
                 $("#cPL").text(game.computerCharacter.cPL);
                 $('#cAP').text(game.computerCharacter.cAttack);
 
-                $("#attack").attr("disabled",false);
+                $("#attack").attr("disabled", false);
 
             } else {
 
@@ -64,7 +64,7 @@ var game = {
                     $('#cAP').text(game.computerCharacter.cAttack);
 
                     $("#warriorHeading").text("Press the attack button to attack!")
-                    $("#attack").attr("disabled",false);
+                    $("#attack").attr("disabled", false);
 
                 } else {
                     console.log(x);
@@ -93,14 +93,12 @@ var game = {
         console.log("this is damage", x.cAttack);
         //display current attack level  as damage for opposing character
 
-        if (x === this.playerCharacter){
-        	$("#computerFightingArea").text("-"+damage).hide().fadeIn().delay(600).fadeOut("slow");
-        }
-        else if (x=== this.computerCharacter){
-        	$("#playerFightingArea").text("-"+damage).hide().fadeIn().delay(600).fadeOut("slow");
-        }
-        else{
-        	console.log("damage if/else: You should not be seeing this");
+        if (x === this.playerCharacter) {
+            $("#computerFightingArea").text("-" + damage).hide().fadeIn().delay(600).fadeOut("slow");
+        } else if (x === this.computerCharacter) {
+            $("#playerFightingArea").text("-" + damage).hide().fadeIn().delay(600).fadeOut("slow");
+        } else {
+            console.log("damage if/else: You should not be seeing this");
         }
 
         this.hpUpdate(x, damage);
@@ -131,8 +129,8 @@ var game = {
         x.cPL = x.cPL + 1000;
         $("#pPL").text(game.playerCharacter.cPL);
         console.log("this is new PL", x.cPL);
-        if(game.playerCharacter.cPL > 9000){
-        	$("#warriorHeading").text("It's OVER 9000!!!!!");
+        if (game.playerCharacter.cPL > 9000) {
+            $("#warriorHeading").text("It's OVER 9000!!!!!");
         }
         this.attackLevelIncrease(x);
         //write new PL on screen
@@ -161,15 +159,14 @@ var game = {
             console.log("Computer is still alive")
         } else {
             console.log("the computer has died")
-            $("#attack").attr("disabled",true);
+            $("#attack").attr("disabled", true);
             this.newOpponent();
             this.opponentsDefeated++;
-            if (this.opponentsDefeated<3){
-            	$("#warriorHeading").text("You have defeated your opponent. Choose your next opponent wisely!")
-        	}
-        	else{
-        		$("#warriorHeading").text("You have survived. For now... Press reset to start again")
-        	}
+            if (this.opponentsDefeated < 3) {
+                $("#warriorHeading").text("You have defeated your opponent. Choose your next opponent wisely!")
+            } else {
+                $("#warriorHeading").text("You have survived. For now... Press reset to start again")
+            }
         };
     },
 
@@ -181,7 +178,7 @@ var game = {
 
     setGameBoard: function() {
         for (i = 0; i < this.characterArray.length; i++) {
-            
+
             var $elem = $("#warriorFlex");
 
             $elem.append(
@@ -227,7 +224,7 @@ var game = {
         $("#computerFightingArea").empty();
 
         $("#warriorHeading").text("Click an image to choose your warrior. Choose wisely!");
-        $("#attack").attr("disabled",true);
+        $("#attack").attr("disabled", true);
 
         this.setGameBoard();
 
@@ -238,10 +235,10 @@ var game = {
         })
 
 
-       	$("#attack").off().click(function() {
+        $("#attack").off().click(function() {
 
-       	    	game.playerAttack();
-       	})
+            game.playerAttack();
+        })
 
 
         $("#reset").off().click(function() {
