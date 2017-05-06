@@ -75,6 +75,7 @@ h6 {
 	flex:1;
 	display: flex;
 	flex-direction: column;
+	/*display: none;*/
 }
 
 #computerAttackPower,
@@ -91,8 +92,8 @@ h6 {
    	display: flex;
    	flex-direction: column;
    	justify-content: center;
-
 }
+
 
 .currentInfo{
 	flex: 1;
@@ -137,6 +138,7 @@ h6 {
     align-items: center;
  	justify-content: center;
  	padding: 0 2% 0 2%;
+ 	font-weight: bold;
 }
 
 #gameBoard {
@@ -190,6 +192,7 @@ div .warriorName {
 .warriorAtt3 {
 	font-size: 1.1em;
 	padding: .5% 0 .5% 0;
+	text-align: center;
 }
 
 #copyright{

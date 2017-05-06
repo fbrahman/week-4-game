@@ -13,6 +13,8 @@ var game = {
             this.playerCharacter = $.extend(true, {}, (this.characterArray[indexValue]));
             $(x).find("img.warriorImg").slideUp(function() {
                 $(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
+
+            $("#playerHP").slideDown(8000);
             
             $("#warriorHeading").text("Choose your opponent!");
 
@@ -119,6 +121,9 @@ var game = {
         x.cPL = x.cPL + 1000;
         $("#pPL").text(game.playerCharacter.cPL);
         console.log("this is new PL", x.cPL);
+        if(game.playerCharacter.cPL > 9000){
+        	$("#warriorHeading").text("It's OVER 9000!!!!!");
+        }
         this.attackLevelIncrease(x);
         //write new PL on screen
     },
