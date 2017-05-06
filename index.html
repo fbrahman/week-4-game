@@ -17,7 +17,7 @@
             <!-- populated by jQuery -->
             </div>
             <div class="warriorInfoBar">
-	            <div id="playerHP" class="element invisible">
+	            <div id="playerHP" class="element">
 	                <p class="element">Health Points</p>
 	                <p class="currentInfo element" id="pHP">
 	                <!-- populated by jQuery -->
@@ -41,11 +41,21 @@
             <p id="gameIntro" class="element">Four fighters enter and only fighter can leave! Do you have what it takes to be the last man standing? Choose your warrior carefully and start your journey on three one-on-one battles to the death! Good Luck!</p>
             <h2 id="warriorHeading" class="element">Click an image to choose your warrior. Choose wisely!</h2>
             <div id="gameBoard" class="element">
-                <div id="fightingArea">
+                <div id="fightingArea" class="element">
+                	<div id="playerFightingArea" class="element">
+                		<!-- populated by jQuery -->
+                	</div>
+                	<div id="computerFightingArea" class="element">
+                		<!-- populated by jQuery -->
+                	</div>
                 </div>
-                <div id="buttons">
-                    <button id="attack" disabled="true">Attack</button>
-                    <button id="reset">Reset</button>
+                <div id="buttons" class="element">
+                    <div id="buttonReset">	
+                    	<button id="reset" class="myButton">Reset</button>
+                    </div>
+                    <div id="buttonAttack">
+                    	<button id="attack" class="myButton" disabled="true">Attack</button>
+                    </div>
                 </div>
             </div>
             <div id="warriorFlex" class="element">

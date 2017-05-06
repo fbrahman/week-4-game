@@ -13,9 +13,7 @@ var game = {
             this.playerCharacter = $.extend(true, {}, (this.characterArray[indexValue]));
             $(x).find("img.warriorImg").slideUp(function() {
                 $(x).find("img.warriorImg").detach().hide().appendTo("#playerChoiceImage").slideDown("slow");
-
-            $("#playerHP").slideDown(8000);
-            
+           
             $("#warriorHeading").text("Choose your opponent!");
 
             $("#pHP").text(game.playerCharacter.cHP);
@@ -94,7 +92,19 @@ var game = {
         var damage = x.cAttack;
         console.log("this is damage", x.cAttack);
         //display current attack level  as damage for opposing character
+
+        if (x === this.playerCharacter){
+        	$("#computerFightingArea").text("-"+damage);
+        }
+        else if (x=== this.computerCharacter){
+        	$("#playerFightingArea").text("-"+damage);
+        }
+        else{
+        	console.log("damage if/else: You should not be seeing this");
+        }
+
         this.hpUpdate(x, damage);
+
     },
 
     hpUpdate: function(x, damage) {
@@ -213,6 +223,8 @@ var game = {
         $("#cHP").empty();
         $("#cPL").empty();
         $('#cAP').empty();
+        $("#playerFightingArea").empty();
+        $("#computerFightingArea").empty();
 
         $("#warriorHeading").text("Click an image to choose your warrior. Choose wisely!");
         $("#attack").attr("disabled",true);
